@@ -57,7 +57,16 @@ function tweetRandomImage(){
               );
             } );
           }
-        } );      
+        } );  
+        const deleteFile = imagePath
+          if (fs.existsSync(deleteFile)) {
+          fs.unlink(deleteFile, (err) => {
+          if (err) {
+            console.log(err);
+            }
+            console.log('deleted');
+        })
+        }    
       }
     } );
   }
